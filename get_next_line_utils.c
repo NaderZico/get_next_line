@@ -6,7 +6,7 @@
 /*   By: nakhalil <nakhalil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:54:47 by nakhalil          #+#    #+#             */
-/*   Updated: 2025/01/22 13:57:51 by nakhalil         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:51:00 by nakhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,6 @@ size_t	ft_strlen(const char *s)
 	while (s[len])
 		len++;
 	return (len);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len;
-	char	*dup;
-	size_t	i;
-
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	dup = malloc(sizeof(char) * (len + 1));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		dup[i] = s1[i];
-		i++;
-	}
-	dup[len] = '\0';
-	return (dup);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
