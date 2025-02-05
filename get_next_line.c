@@ -6,30 +6,30 @@
 /*   By: nakhalil <nakhalil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:54:34 by nakhalil          #+#    #+#             */
-/*   Updated: 2025/01/23 12:49:49 by nakhalil         ###   ########.fr       */
+/*   Updated: 2025/02/05 20:38:43 by nakhalil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*extract_line(char *buffer)
+static char	*extract_line(char *remainder)
 {
 	size_t	i;
 	char	*line;
 
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
+	while (remainder[i] && remainder[i] != '\n')
 		i++;
-	line = malloc(sizeof(char) * (i + (buffer[i] == '\n') + 1));
+	line = malloc(sizeof(char) * (i + (remainder[i] == '\n') + 1));
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
+	while (remainder[i] && remainder[i] != '\n')
 	{
-		line[i] = buffer[i];
+		line[i] = remainder[i];
 		i++;
 	}
-	if (buffer[i] == '\n')
+	if (remainder[i] == '\n')
 	{
 		line[i] = '\n';
 		i++;
